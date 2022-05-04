@@ -1,34 +1,18 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Reddit clone
 
-## Getting Started
+![Problème temporaire, veuillez recharger la page pour voir l'image](https://codiscovery-readme-header.herokuapp.com/api/actions/generate-image?titleColor=original&iconName=square-poll-vertical&title=Reddit%20clone&subtitleLine1=Cl%C3%B4ne%20de%20Reddit%20codé%20en%20live&subtitleLine2=En%204%20heures...%20voire%20un%20peu%20plus&technologies=Next.js,Tailwind,React)
 
-First, run the development server:
+- https://dribbble.com/shots/11417343-Waveforum-Activity-Feed
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+### TODO
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [x] Menu homepage
+- [x] Responsive in 2 breakpoints
+- [x] Align Post and Title page
+- [x] Use @apply for tailwind (kind of)
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### If you want to, you can add them in a pull request
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [ ] Interactive vote system
+  - [ ] Animated vote (framer-motion)
+- [ ] Make a component of the profile picture

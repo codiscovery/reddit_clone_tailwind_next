@@ -1,69 +1,117 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Post from "../components/Post";
+import Menu from "../components/Menu";
 
-export default function Home() {
+const posts = [
+  {
+    vote: 30,
+    type: "travel",
+    contentType: "image",
+    title: "Mon dernier voyage en Inde",
+    content:
+      "https://images.unsplash.com/photo-1650916157060-2c21e86f140c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2371&q=80",
+    author: {
+      name: "Leila",
+      url: "https://codiscovery.co",
+      img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=270&q=80",
+    }, // name, url, img
+    creationDate: "2022-05-04T17:39:28.713Z",
+    comments: [{}, {}],
+  },
+
+  {
+    vote: -30,
+    type: "question",
+    contentType: "text",
+    title: "Que dit le renard ?",
+    content:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare ex urna, id elementum nibh porttitor nec. Pellentesque feugiat odio a quam scelerisque iaculis. Nullam nec nulla et neque lobortis rhoncus nec sed quam. Suspendisse metus libero, iaculis quis est ac, viverra blandit libero. Etiam sit amet pulvinar leo. Sed tincidunt nunc efficitur neque luctus tempus. Phasellus vulputate quis nisl sit amet auctor. Ut sed nibh lacus. Cras sodales ipsum ac aliquam fermentum.",
+    author: {
+      name: "Léo",
+      url: "https://codiscovery.co",
+      img: "https://picsum.photos/200/200",
+    }, // name, url, img
+    creationDate: "2022-05-04T16:39:28.813Z",
+    comments: [{}, {}, {}, {}, {}, {}],
+  },
+  {
+    vote: 0,
+    type: "question",
+    contentType: "text",
+    title: "Que dit la tortue ?",
+    content:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare ex urna, id elementum nibh porttitor nec. Pellentesque feugiat odio a quam scelerisque iaculis. Nullam nec nulla et neque lobortis rhoncus nec sed quam. Suspendisse metus libero, iaculis quis est ac, viverra blandit libero. Etiam sit amet pulvinar leo. Sed tincidunt nunc efficitur neque luctus tempus. Phasellus vulputate quis nisl sit amet auctor. Ut sed nibh lacus. Cras sodales ipsum ac aliquam fermentum.",
+    author: {
+      name: "Léo",
+      url: "https://codiscovery.co",
+      img: "https://picsum.photos/200/200",
+    }, // name, url, img
+    creationDate: "2022-05-04T16:39:28.913Z",
+    comments: [{}, {}, {}, {}, {}, {}],
+  },
+  {
+    vote: 30,
+    type: "travel",
+    contentType: "image",
+    title: "Mon dernier voyage en Inde",
+    content:
+      "https://images.unsplash.com/photo-1650916157060-2c21e86f140c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2371&q=80",
+    author: {
+      name: "Leila",
+      url: "https://codiscovery.co",
+      img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=270&q=80",
+    }, // name, url, img
+    creationDate: "2022-05-04T17:39:28.713Z",
+    comments: [{}, {}],
+  },
+
+  {
+    vote: -30,
+    type: "question",
+    contentType: "text",
+    title: "Que dit le renard ?",
+    content:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare ex urna, id elementum nibh porttitor nec. Pellentesque feugiat odio a quam scelerisque iaculis. Nullam nec nulla et neque lobortis rhoncus nec sed quam. Suspendisse metus libero, iaculis quis est ac, viverra blandit libero. Etiam sit amet pulvinar leo. Sed tincidunt nunc efficitur neque luctus tempus. Phasellus vulputate quis nisl sit amet auctor. Ut sed nibh lacus. Cras sodales ipsum ac aliquam fermentum.",
+    author: {
+      name: "Léo",
+      url: "https://codiscovery.co",
+      img: "https://picsum.photos/200/200",
+    }, // name, url, img
+    creationDate: "2022-05-04T16:39:28.813Z",
+    comments: [{}, {}, {}, {}, {}, {}],
+  },
+  {
+    vote: 0,
+    type: "question",
+    contentType: "text",
+    title: "Que dit la tortue ?",
+    content:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare ex urna, id elementum nibh porttitor nec. Pellentesque feugiat odio a quam scelerisque iaculis. Nullam nec nulla et neque lobortis rhoncus nec sed quam. Suspendisse metus libero, iaculis quis est ac, viverra blandit libero. Etiam sit amet pulvinar leo. Sed tincidunt nunc efficitur neque luctus tempus. Phasellus vulputate quis nisl sit amet auctor. Ut sed nibh lacus. Cras sodales ipsum ac aliquam fermentum.",
+    author: {
+      name: "Léo",
+      url: "https://codiscovery.co",
+      img: "https://picsum.photos/200/200",
+    }, // name, url, img
+    creationDate: "2022-05-04T16:39:28.913Z",
+    comments: [{}, {}, {}, {}, {}, {}],
+  },
+];
+
+function Home() {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <meta name="description" content="Generated by create next app" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+    <div className="bg-zinc-100 flex">
+      <Menu />
+      <div className="overflow-auto h-screen px-10 py-10">
+        <h1 className="text-3xl font-extralight">
+          Votre <span className="font-semibold">fil d'actualité</span>
         </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+        <div className="xl:grid xl:grid-cols-2 xl:items-start xl:gap-10">
+          {posts.map((post) => {
+            return <Post key={post.creationDate} {...post} />;
+          })}
         </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
+      </div>
     </div>
-  )
+  );
 }
+
+export default Home;
