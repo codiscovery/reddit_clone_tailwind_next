@@ -1,0 +1,10 @@
+@tailwind components;
+
+@layer components {
+  .container {
+    @apply flex w-full bg-white my-10 rounded-lg drop-shadow-lg p-8 text-zinc-400;
+  }
+  .votecontainer {
+    @apply pr-8 hidden md:block;
+  }
+}

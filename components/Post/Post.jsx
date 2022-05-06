@@ -1,4 +1,4 @@
-import "./Post.module.css";
+import styles from "./Post.module.css";
 
 import Vote from "./Vote";
 import Content from "./Content";
@@ -16,8 +16,8 @@ function Post({
   comments = [],
 }) {
   return (
-    <div className="post-container">
-      <div className="post-vote-container">
+    <div className={styles.container}>
+      <div className={styles.votecontainer}>
         <Vote total={vote} />
       </div>
       <div className="divide-y flex flex-col gap-4">
