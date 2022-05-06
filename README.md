@@ -9,7 +9,7 @@
 - [x] Menu homepage
 - [x] Responsive in 2 breakpoints
 - [x] Align Post and Title page
-- [x] Use @apply for tailwind (kind of)
+- [x] Use @apply for tailwind
 
 ### If you want to, you can add them in a pull request
 
